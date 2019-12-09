@@ -1,0 +1,8 @@
+version: '3'
+services:
+  mongoid-query-cache-test:
+    volumes:
+      - mongoid-query-cache-test-sync:/usr/src/app:nocopy
+volumes:
+  mongoid-query-cache-test-sync:
+    external: true

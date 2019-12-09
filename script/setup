@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ $(uname) = "Darwin" ]
+then
+  echo "Starting docker-sync, this may take some times"
+  docker-sync start
+fi
+
+echo "Build docker images"
+script/docker-compose build
+
+echo "Installing gems."
+script/docker-compose run --rm mongoid-query-cache-test bundle install

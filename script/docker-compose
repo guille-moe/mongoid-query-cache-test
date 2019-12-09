@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ $(uname) = "Darwin" ]
+then
+  docker-compose -f docker-compose.yml -f docker-compose.mac.yml $@
+else
+  docker-compose -f docker-compose.yml -f docker-compose.dev.yml $@
+fi

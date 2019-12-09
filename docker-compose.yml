@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  mongoid-query-cache-test:
+    build: .
+    command: bundle exec rspec
+    depends_on:
+      - db
+    environment:
+      - BUNDLE_PATH=/usr/src/app/vendor
+      - BUNDLE_PATH__SYSTEM=/usr/src/app/vendor
+
+  db:
+    image: mongo

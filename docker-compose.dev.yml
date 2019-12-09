@@ -1,0 +1,5 @@
+version: '3'
+services:
+  mongoid-query-cache-test:
+    volumes:
+      - ./:/usr/src/app/:cached

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+start() {
+  if [ $(uname) = "Darwin" ]
+  then
+    echo "Starting docker-sync"
+    docker-sync start
+  fi
+
+  echo "Starting"
+  script/docker-compose run --rm mongoid-query-cache-test bundle exec rspec
+}
+
+start
